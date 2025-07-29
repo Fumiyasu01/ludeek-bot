@@ -3,12 +3,13 @@ import { getManual, updateManual } from '@/app/lib/manual-service'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { category: string } }
+  { params }: { params: Promise<{ category: string }> }
 ) {
-  const category = decodeURIComponent(params.category)
+  const { category } = await params
+  const decodedCategory = decodeURIComponent(category)
   
   try {
-    const manual = await getManual(category)
+    const manual = await getManual(decodedCategory)
     return NextResponse.json(manual)
   } catch (error) {
     console.error('GET manual error:', error)
@@ -21,13 +22,14 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { category: string } }
+  { params }: { params: Promise<{ category: string }> }
 ) {
   try {
-    const category = decodeURIComponent(params.category)
+    const { category } = await params
+    const decodedCategory = decodeURIComponent(category)
     const { content } = await request.json()
     
-    const result = await updateManual(category, content)
+    const result = await updateManual(decodedCategory, content)
     
     return NextResponse.json(result)
   } catch (error) {
