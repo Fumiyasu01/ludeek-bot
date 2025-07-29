@@ -21,7 +21,7 @@ export default function ManualEditor() {
       if (content) {
         saveManual()
       }
-    }, 3000)
+    }, 5000) // 5秒に延長
 
     return () => clearTimeout(timer)
   }, [content])
