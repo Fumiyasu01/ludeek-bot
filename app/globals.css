@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border-gray;
+  }
+  
+  html {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  body {
+    @apply text-black bg-white;
+  }
+  
+  h1 {
+    @apply text-xl font-normal;
+  }
+  
+  button {
+    @apply min-h-[40px] px-4 transition-colors duration-150;
+  }
+  
+  input, textarea {
+    @apply transition-all duration-150;
+  }
+  
+  /* スクロールバーのスタイル */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-hover-gray;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-gray hover:bg-gray-400;
+  }
+}
