@@ -10,9 +10,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <header className="mb-12">
-          <h1 className="text-center mb-8 text-2xl tracking-wide">Ludeek bot</h1>
+      <div className="max-w-4xl mx-auto px-4 py-4 sm:py-8">
+        <header className="mb-6 sm:mb-12">
+          <h1 className="text-center mb-4 sm:mb-8 text-xl sm:text-2xl tracking-wide">Ludeek bot</h1>
           <ModeToggle mode={mode} setMode={setMode} />
         </header>
         

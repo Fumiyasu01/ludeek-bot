@@ -82,7 +82,7 @@ export default function ManualEditor() {
             <textarea
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="w-full h-[500px] p-6 border resize-none focus:outline-none focus:border-black font-mono text-sm leading-relaxed"
+              className="w-full h-[350px] sm:h-[500px] p-4 sm:p-6 border resize-none focus:outline-none focus:border-black font-mono text-xs sm:text-sm leading-relaxed"
               placeholder="マニュアルを入力してください"
             />
             <div className="absolute top-4 right-4 text-xs text-gray-500">

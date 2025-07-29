@@ -44,7 +44,7 @@ export default function ChatInterface() {
 
   return (
     <div className="space-y-6">
-      <div className="min-h-[400px] max-h-[600px] overflow-y-auto p-6 bg-white border rounded-none">
+      <div className="min-h-[300px] sm:min-h-[400px] max-h-[400px] sm:max-h-[600px] overflow-y-auto p-4 sm:p-6 bg-white border rounded-none">
         {messages.length === 0 ? (
           <div className="text-gray-500 text-center py-20">
             質問を入力してください

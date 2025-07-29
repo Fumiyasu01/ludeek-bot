@@ -14,7 +14,7 @@ export async function generateAnswer(question: string, manualContent: string) {
 ${manualContent}`
 
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4-turbo-preview',
+      model: 'gpt-4o-mini', // 高速・低コスト・高精度のバランス
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: question }
