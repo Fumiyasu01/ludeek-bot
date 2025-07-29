@@ -6,7 +6,7 @@ const isSupabaseConfigured = () => {
 }
 
 export async function saveChatLog(question: string, answer: string) {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseConfigured() || !supabase) {
     // Supabaseが未設定の場合は何もしない
     return { success: true }
   }

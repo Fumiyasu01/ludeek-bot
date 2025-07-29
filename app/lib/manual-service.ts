@@ -7,7 +7,7 @@ const isSupabaseConfigured = () => {
 }
 
 export async function getManual(category: string) {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseConfigured() || !supabase) {
     // Supabaseが未設定の場合はメモリストアから取得
     return {
       category,
@@ -48,7 +48,7 @@ export async function getManual(category: string) {
 }
 
 export async function updateManual(category: string, content: string) {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseConfigured() || !supabase) {
     // Supabaseが未設定の場合はメモリストアに保存
     manualStore[category] = content
     return {
@@ -108,7 +108,7 @@ export async function updateManual(category: string, content: string) {
 }
 
 export async function getAllManuals() {
-  if (!isSupabaseConfigured()) {
+  if (!isSupabaseConfigured() || !supabase) {
     return manualStore
   }
 
